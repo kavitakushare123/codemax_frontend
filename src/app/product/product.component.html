@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Add Product</h2>
+  <form id="MyForm" #addForm=ngForm (ngSubmit)="addForm.form.valid && add(addForm.value)" >
+
+    <div class="form-group">
+      <label for="pname">Product Name:</label>
+      <input type="input" class="form-control" id="pname" placeholder="Prodcut Name" name="pname" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="input" class="form-control" id="amount" placeholder="Enter Amount" name="amount" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="amount">Quantiy:</label>
+      <input type="input" class="form-control" id="quantity" placeholder="Enter Quantity" name="quantity" ngModel>
+    </div>
+    
+    <div class="form-group">
+      <label for="amount">Description:</label>
+      <input type="input" class="form-control" id="description" placeholder="Enter Amount" name="desc" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="amount">Product Image:</label>
+      <input 
+      id="file" 
+      type="file" 
+      name = "file"
+      ngModel
+      class="form-control"
+      (change)="onFileChange($event)">
+       
+          <img src="{{imageSrc}}" *ngIf="imageSrc" style="height: 300px; width:500px">
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

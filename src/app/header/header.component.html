@@ -1,0 +1,45 @@
+<!--Header Start-->
+<header>
+	<div id="topheader">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light customBgnav">
+	<div class="container">
+	  <a class="navbar-brand text-uppercase logo" href="#">
+		  <img src="../../assets/images/header/logo.png" alt="logo" /></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav text-center mr-auto text-uppercase leftMenu">
+		  <li class="nav-item active">
+			<a class="nav-link pt-0" routerLink="/home" translate >Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link pt-0" routerLink="/product" translate>Product</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link pt-0" routerLink="/company" translate>Company</a>
+		  </li>
+		  
+		  <li class="nav-item">
+			<a class="nav-link pt-0" routerLink="/contact/" translate>Contact</a>
+		  </li>
+		  
+		</ul>
+		<div id="rightMenu">
+		 <ul class="navbar-nav list-inline m-0 headerRightMenu">
+          <li class="nav-item list-inline-item mr-2">
+		</li>
+		  <li class="nav-item list-inline-item mr-2">
+			<button type="button" *ngIf="token"  (click)="actionMethod();" class="btn signBtn">Logout</button>
+		  </li>
+		 			
+		  
+		 </ul>
+		</div>
+	  </div>
+	  </div>
+	</nav>
+	</div>
+</header>
+<!-- Header End-->
+

@@ -1,0 +1,45 @@
+<div class="container">
+      <h5 class="primaryText"><strong>Login Here </strong></h5>
+        <form id="MyForm" #loginForm=ngForm (ngSubmit)="loginForm.form.valid && login(loginForm.value)" >
+
+        <div class="form-group">
+        <input type="text" placeholder="Username" #user_name="ngModel" name="user_name" ngModel class="form-control" >
+
+      </div>
+        <div *ngIf="loginForm.submitted && user_name.errors"  class="alert alert-danger">
+          <div *ngIf="user_name.errors.required">Username is Required</div>
+        </div>
+
+        
+        <div class="form-group">
+        <input type="password" placeholder="Password" #password="ngModel" ngModel name="password" class="form-control">
+      </div>
+        <div *ngIf="loginForm.submitted && password.errors" class="alert alert-danger">
+          <div *ngIf = "password.errors.required">Password is Required</div>
+          </div>
+          
+          <div *ngIf = "invalidLogin" class = "alert alert-danger">Login Successful</div>  
+          <div *ngIf="invalidLogin && loginForm.submitted" class = "alert alert-danger">
+            <div>
+              Invalid Username and Password
+            </div>
+          </div>
+        <button type="submit"  class="btn btn-primary">Login</button>
+        <div *ngIf="authobject">
+        <div *ngIf="authobject.msg == 'Login success'" class = "alert alert-success">
+        
+          Login Successful
+        
+      </div>
+    </div>
+      </form>
+      <p class="SecondayText">Don’t have an account?  <a routerLink="/registration" class="link">Register Here.</a></p>
+     
+</div>
+
+
+
+
+
+
+ 
